@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'web-scraper-rss'
+rootProject.name = 'news-for-you'

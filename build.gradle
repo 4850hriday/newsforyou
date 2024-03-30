@@ -1,6 +1,11 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'org.springframework.boot' version '2.3.12.RELEASE'
 	id 'java'
+	id 'application'
+}
+application {
+	// Specify the main class for your Spring Boot application
+	mainClassName = 'com.nt.newforyou.WebScraperRssFeedGeneratorApplication'
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -8,6 +13,8 @@ apply plugin: 'io.spring.dependency-management'
 group = 'net.mestwin'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+archivesBaseName = 'newsforyou'
 
 configurations {
 	compileOnly {
@@ -25,7 +32,9 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.5.RELEASE'
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
 	implementation('org.springframework.boot:spring-boot-starter-web')
-	compile ('org.springframework.boot:spring-boot-starter-log4j')
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
